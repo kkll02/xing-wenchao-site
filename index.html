@@ -319,16 +319,6 @@ h1 {
   background: var(--paper-strong);
 }
 
-.partner-page .section-kicker,
-.partner-page .resource-type,
-.partner-page .selector-label {
-  color: var(--gold);
-}
-
-.partner-page .hero::after {
-  background: linear-gradient(90deg, transparent, var(--gold), var(--cyan), transparent);
-}
-
 .competition-board {
   margin-top: 42px;
   border-top: 1px solid var(--line);
@@ -854,14 +844,6 @@ body:has(.detail-panel:target) .showcase-detail {
               个人网站：
               <a href="/" data-site-link>http://127.0.0.1:5173/</a>
             </span>
-            <span class="lead-link">
-              <a class="partner-link" href="tang-yiming.html" data-partner-site-link>
-                <span aria-hidden="true">♡</span>
-                唐一铭
-                <span aria-hidden="true">♡</span>
-                的个人网站
-              </a>
-            </span>
           </p>
           <div class="hero-actions" aria-label="主要操作">
             <a
@@ -1119,7 +1101,6 @@ body:has(.detail-panel:target) .showcase-detail {
 const copyButton = document.querySelector("[data-copy]");
 const toast = document.querySelector(".toast");
 const siteLink = document.querySelector("[data-site-link]");
-const partnerSiteLink = document.querySelector("[data-partner-site-link]");
 const showcase = document.querySelector("[data-showcase]");
 const showcaseDetail = document.querySelector(".showcase-detail");
 const showcasePanels = [...document.querySelectorAll("[data-showcase-panel]")];
@@ -1132,14 +1113,6 @@ if (siteLink) {
   siteLink.href = siteUrl;
   siteLink.setAttribute("href", siteUrl);
   siteLink.textContent = siteUrl;
-}
-
-if (partnerSiteLink) {
-  const partnerUrl = new URL("tang-yiming.html", window.location.href);
-  partnerUrl.search = "";
-  partnerUrl.hash = "";
-  partnerSiteLink.href = partnerUrl.href;
-  partnerSiteLink.setAttribute("href", partnerUrl.href);
 }
 
 function showToast(message) {
